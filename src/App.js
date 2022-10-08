@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+
+
+import "./categories.scss"
 
 function App() {
+
+  const categories = [
+    {
+      title : "hats",
+      imageUrl:'https://i.ibb.co/px2tCc3/jackets.png',
+
+    },
+    {
+      title : "jackets",
+      imageUrl:'https://i.ibb.co/px2tCc3/jackets.png',
+    },
+    {
+      title : "sneakers",
+      imageUrl:'https://i.ibb.co/px2tCc3/jackets.png',
+
+    },
+    {
+      title : "women's",
+      imageUrl:'https://i.ibb.co/px2tCc3/jackets.png',
+    },
+    {
+      title : "men's",
+      imageUrl:'https://i.ibb.co/px2tCc3/jackets.png',
+    }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="categories">
+
+       { categories.map(({title ,imageUrl}) =>(
+          <div className="category-container"
+          style={{backgroundImage: `Url(${imageUrl})`}}>
+        
+               <div className="category-body">
+                  <h2>{title}</h2>
+                  <p>shop now</p>
+                  </div> 
+                  </div>
+        ))
+      }  
+
+
+ 
+
+      </div>
+
+      
     </div>
   );
-}
+  }
 
 export default App;
